@@ -8,6 +8,11 @@ const quantidadeCapitulos = 10;
 let taTocando = false;
 let capitulo = 1;
 
+function carregarCapitulo() {
+  audio.src = "books/dom-casmurro/" + capitulo + ".mp3";
+  nomeCapitulo.innerText = "Capítulo " + capitulo;
+}
+
 function tocarFaixa() {
   botaoPlayPause.classList.remove("bi-play-circle-fill");
   botaoPlayPause.classList.add("bi-pause-circle-fill");
@@ -51,6 +56,7 @@ function proximoCapitulo() {
   nomeCapitulo.innerText = "Capítulo " + capitulo;
   tocarFaixa();
 }
+carregarCapitulo();
 
 botaoPlayPause.addEventListener("click", tocarOuPausarFaixa);
 botaoCapituloAnterior.addEventListener("click", capituloAnterior);
